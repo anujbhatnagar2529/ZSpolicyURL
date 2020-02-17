@@ -75,7 +75,7 @@ pipeline {
 					sh 'pwd'
 					
 					// User provided value for dynamic URL of deployed app
-					sh '/var/www/html/url.sh -a stg -b apac -b dx1444'
+					sh '/var/www/html/url.sh -a stg -b apac -c dx1444'
 				}
 				}
 			}
