@@ -19,8 +19,10 @@ pipeline {
 				steps {
 					echo "NODE_NAME = ${env.NODE_NAME}"
 					sh 'hostname -i'
+					sh 'namingPolicy.sh"'
 					sh 'echo "Build Started"'
 					sh 'pwd'
+    					sh './namingPolicy.sh -a prd -b apac -c d1234'							
 				}
 				}
 							
@@ -36,32 +38,22 @@ pipeline {
 								sh 'hostname -i'
 								sh 'echo "Build Started"'
 								sh 'pwd'
+								sh 'pwd'
+								sh './namingPolicy.sh -a cmd -b amer -c c1234'							
+								
 							}
 							}
-							stage('Production Server2') {
-							agent {
-								//node 'ZSstage2'
-								label 'ZSProd'
-							}
+			 
 							steps {
 								echo "NODE_NAME = ${env.NODE_NAME}"
 								sh 'hostname -i'
+								sh 'namingPolicy.sh"'
 								sh 'echo "Build Started"'
 								sh 'pwd'
+								sh './namingPolicy.sh -a prd -b apac -c d1234'							
 							}
 							}
-							stage('Production Server3') {
-							agent {
-								//node 'ZSstage2'
-								label 'ZSProd'
-							}
-							steps {
-								echo "NODE_NAME = ${env.NODE_NAME}"
-								sh 'hostname -i'
-								sh 'echo "Build Started"'
-								sh 'pwd'
-							}
-							}
+
 					}
 				}
         }
