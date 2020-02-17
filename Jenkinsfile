@@ -27,9 +27,7 @@ pipeline {
 					sh 'pwd'
 					
 					// User provided value for dynamic URL of deployed app
-					sh 'NewUrl=$(/var/www/html/url.sh -a prd -b apac -c dx1234 | head -4| tail -1)'
-					sh '/var/www/html/accessURL.sh ${NewUrl}.html'
-					
+					sh '/var/www/html/url.sh -a prd -b apac -c dx1234'
 				}
 				}
 				stage('Client B') {
@@ -45,9 +43,7 @@ pipeline {
 					sh 'pwd'
 
 					// User provided value for dynamic URL of deployed app
-					sh 'NewUrl=$(/var/www/html/url.sh -a prd -b amer -c dx4567 | head -4| tail -1)'
-					sh '/var/www/html/accessURL.sh ${NewUrl}.html'
-					
+					sh '/var/www/html/url.sh -a prd -b amer -c dx4567'
 				}
 				}
 				stage('Client C') {
@@ -63,9 +59,7 @@ pipeline {
 					sh 'pwd'
 					
 					// User provided value for dynamic URL of deployed app
-					sh 'NewUrl=$(/var/www/html/url.sh -a cmr -b emea -c dx1234 | head -4| tail -1)'
-					sh '/var/www/html/accessURL.sh ${NewUrl}.html'
-
+					sh '/var/www/html/url.sh -a cmr -b emea -c dx1234'
 				}
 				}
 				stage('Client D') {
@@ -81,8 +75,7 @@ pipeline {
 					sh 'pwd'
 					
 					// User provided value for dynamic URL of deployed app
-					sh 'NewUrl=$(/var/www/html/url.sh -a stg -b apac -b dx1444 | head -4| tail -1)'
-					sh '/var/www/html/accessURL.sh ${NewUrl}.html'
+					sh '/var/www/html/url.sh -a stg -b apac -b dx1444'
 				}
 				}
 			}
